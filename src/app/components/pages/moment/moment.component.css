@@ -1,0 +1,71 @@
+.moment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.moment-content {
+  text-align: center;
+}
+
+.moment-content img {
+  max-width: 70%;
+}
+
+.moment-footer {
+  text-align: center;
+}
+
+.moment-footer h2 {
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: min(100%, 70%);
+  padding: 1.2rem;
+  background-color: #eee;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.comments,
+.no-comments {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.no-comments h4 {
+  text-align: center;
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+.comment {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment:last-of-type {
+  padding: 0.8rem 1rem 1.5rem;
+}
+
+.container {
+  width: min(70%, 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input[type="submit"] {
+  align-items: center;
+}

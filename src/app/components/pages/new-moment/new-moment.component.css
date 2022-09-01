@@ -1,0 +1,8 @@
+.row h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.row h1 span {
+    color: var(--second-text-color);
+}

@@ -1,1 +1,155 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --main-text-color: #444;
+  --second-text-color: #dec129;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  color: var(--main-text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-text-color);
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--second-text-color);
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+/* Botões Editar/Excluir */
+.btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.btns button,
+.btns a {
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #007bff;
+  color: #007bff;
+  transition: all 0.2s ease-in-out;
+}
+
+.btns button fa-icon path,
+.btns a fa-icon path {
+  margin-right: 0.2rem;
+  color: #007bff;
+}
+
+.btns button:hover path,
+.btns a:hover path {
+  color: #fff;
+}
+
+.btns button fa-icon,
+.btns a fa-icon {
+  margin-right: 0.2rem;
+}
+
+.btns button:hover,
+.btns a:hover {
+  color: #fff;
+  border-color: #007bff;
+  background-color: #007bff;
+  outline: none;
+}
+
+.btns button:nth-child(2),
+.btns a:nth-child(2) {
+  color: #dc3545;
+  border-color: #dc3545;
+  outline: none;
+}
+
+.btns button:nth-child(2) fa-icon path,
+.btns a:nth-child(2) fa-icon path {
+  color: #dc3545;
+}
+
+.btns button:nth-child(2):hover fa-icon path,
+.btns a:nth-child(2):hover fa-icon path {
+  color: #fff;
+}
+
+.btns button:nth-child(2):hover,
+.btns a:nth-child(2):hover {
+  color: #fff;
+  border-color: #dc3545;
+  background-color: #dc3545;
+  outline: none;
+}
+
+.error {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+form {
+  width: min(100%, 450px);
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.6rem;
+  color: #777;
+  font-size: 0.7rem;
+}
+
+.form-erro {
+  border-left: 3px solid brown;
+  font-size: 0.9rem;
+  padding-left: 5px;
+}
+
+input[type="submit"] {
+  background-color: #efefef;
+  border: 2px solid transparent;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  font: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  color: var(--second-text-color);
+  border-color: var(--second-text-color);
+  background-color: transparent;
+}

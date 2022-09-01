@@ -1,0 +1,66 @@
+<div class="moment" *ngIf="moment; else momentNotFound">
+  <div class="moment-header">
+    <h2>{{ moment.title }}</h2>
+  </div>
+  <div class="moment-content">
+    <img src="{{ baseApiUrl }}uploads/{{ moment.image }}" alt="{{ moment.title }}" />
+  </div>
+  <div class="moment-footer">
+    <h2>Sobre este momento:</h2>
+    <h4>{{ moment.description }}</h4>
+  </div>
+  <div class="actions">
+    <h2>Ações:</h2>
+    <div class="btns">
+      <a routerLink="/moment/edit/{{ moment.id }}">
+        <fa-icon [icon]="faEdit"></fa-icon>
+        Editar
+      </a>
+      <button (click)="removeMoment(moment.id!)">
+        <fa-icon [icon]="faTimes"></fa-icon>
+        Excluir
+      </button>
+    </div>
+  </div>
+  <div>
+    <h2>Comentários ({{totalComments}}):</h2>
+  </div>
+  <section *ngIf="totalComments else noComments" class="comments">
+    <div *ngFor="let item of moment!.comments" class="comment">
+      <h5>{{item['username']}}:</h5>
+      <h6>- {{item['text']}}</h6>
+    </div>
+  </section>
+  <div class="container">
+    <form (ngSubmit)="submitComment(formDir)" [formGroup]="comment" #formDir="ngForm">
+      <div class="form-group">
+        <label for="username">Nome:</label>
+        <input type="text" class="username" formControlName="username" id="username" />
+        <div *ngIf="username.invalid && formDir.submitted" class="form-erro">
+          <p *ngIf="username.errors?.['required']">Nome de usuário obrigatório!</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="text">Comentário:</label>
+        <textarea formControlName="text" id="text"></textarea>
+        <div *ngIf="text.invalid && formDir.submitted" class="form-erro">
+          <p *ngIf="text.errors?.['required']">Comentário obrigatório!</p>
+        </div>
+      </div>
+      <input type="submit" value="Comentar" />
+    </form>
+  </div>
+</div>
+
+<ng-template #momentNotFound>
+  <div class="error">
+    <h1>Momento não existe na base de dados!</h1>
+  </div>
+</ng-template>
+
+<ng-template #noComments>
+  <section class="no-comments">
+    <h4>Nenhum Comentário</h4>
+    <hr style="height: 1px; width: 100%;" />
+  </section>
+</ng-template>

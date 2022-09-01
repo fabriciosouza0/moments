@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <h1>Momentos compartilhados!</h1>
+  <form>
+    <fa-icon [icon]="faSearch"></fa-icon>
+    <input type="search" placeholder="Pesquisar momento" (input)="search($event)" />
+  </form>
+</div>
+<div class="wrapper" *ngIf="moments.length; else noMoments">
+  <div class="moments-wrapper">
+    <div class="card" *ngFor="let moment of moments">
+      <div class="card-header">
+        <img src="{{ baseApiUrl }}uploads/{{ moment.image }}" alt="" />
+      </div>
+      <div class="card-content">
+        <p>Título: {{ moment.title }}</p>
+        <p>Descrição: {{ moment.description }}</p>
+        <p>Data: {{ moment.created_at }}</p>
+        <a routerLink="moment/{{ moment.id }}">Detalhes</a>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template class="error" #noMoments>
+  <div class="error">
+    <h2>Nenhum momento encontrado!</h2>
+  </div>
+</ng-template>

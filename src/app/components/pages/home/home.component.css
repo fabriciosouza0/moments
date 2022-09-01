@@ -1,0 +1,43 @@
+.moments-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.card-header img {
+  max-height: 300px;
+}
+
+.card-content {
+  line-height: 1.2;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+form {
+  position: relative;
+  width: 50%;
+}
+form input {
+  padding: 5px 0px 5px 30px;
+  width: 100%;
+}
+
+form fa-icon {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}

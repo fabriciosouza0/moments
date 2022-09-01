@@ -1,0 +1,4 @@
+main {
+  min-height: calc(100% - 311px);
+  margin: 1.2rem auto !important;
+}
