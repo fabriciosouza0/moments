@@ -4,10 +4,15 @@
       <img draggable="false" src="/assets/moments.png" alt="Moments" />
       <h2>Moments</h2>
     </a>
-    <ul class="nav-links">
-      <li><a routerLink="/">Home</a></li>
-      <li id="add"><a routerLink="/moments/new">Compartilhar</a></li>
-      <li><a routerLink="/about">Sobre</a></li>
-    </ul>
+    <div class="mobile-menu">
+      <button (click)="menu($event)" id="menu">
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
+      <ul class="nav-links">
+        <li><a routerLink="/">Home</a></li>
+        <li id="add"><a routerLink="/moments/new">Compartilhar</a></li>
+        <li><a routerLink="/about">Sobre</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
